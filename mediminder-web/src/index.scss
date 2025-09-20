@@ -1,4 +1,9 @@
 // Import all of Bootstrap’s CSS
+$primary: #00459E;
+$secondary: #8E8E93;
+$success: #049976;
+$warning: #FF9900;
+$danger: #FF3B30;
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -11,22 +16,22 @@
   --font-family: 'SF Pro Rounded', Avenir, sans-serif;
 
   /* Colors */
-  --color-primary: #00459E;
+  --color-primary: #{$primary};
   --color-primary-light: #C2DDFF;
-  
-  --color-secondary: #8E8E93;
+
+  --color-secondary: #{$secondary};
   --color-secondary-light: #E4E4E4;
 
   --color-success-light: #D0FFF4;
-  --color-success: #049976;
+  --color-success: #{$success};
   --color-sucess-dark: #00644C;
 
   --color-danger-light: #FFC3BF;
-  --color-danger: #FF3B30;
+  --color-danger: #{$danger};
   --color-danger-dark: #7D0700;
 
   --color-warning-light: #FFE3BA;
-  --color-warning: #FF9900;
+  --color-warning: #{$warning};
   --color-warning-dark: #985B00;
 }
 
