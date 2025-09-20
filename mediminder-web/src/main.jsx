@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Login from './views/login/login.jsx'
 import RecoverPassword from './views/recover-password/recover-password.jsx'
+import Signup from './views/signup/signup.jsx'
 // Import our custom CSS
 
 // Import all of Bootstrap’s JS
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route index element={<App />} />
         <Route path='login' element={<Login />} />
         <Route path='recover-password' element={<RecoverPassword />} />
+        <Route path='signup' element={<Signup />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
