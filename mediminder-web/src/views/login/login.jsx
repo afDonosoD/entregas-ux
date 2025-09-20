@@ -19,15 +19,15 @@ function Login() {
             <label htmlFor="email" className="form-label">Correo</label>
             <input type="email" className="form-control" id="email" placeholder='Correo' required value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
-          <div className="custom-input-group w-100" style={{ marginBottom: '56px' }}>
+          <div className="custom-input-group w-100" style={{ marginBottom: '8vh' }}>
             <label htmlFor="password" className="form-label">Clave</label>
             <input type="password" className="form-control" id="password" placeholder='Clave' required value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <button type="submit" className="btn btn-primary rounded-pill align-self-center" disabled={!email || !password}>Iniciar Sesión</button>
+          <button type="submit" className="btn btn-primary rounded-pill align-self-center" disabled={!email || !password}>Iniciar sesión</button>
         </form>
 
         <p>¿No tienes una cuenta? <Link to="/signup">Regístrate</Link></p>
-        <p style={{ marginBottom: '25px' }}><Link to="/recover-password">Recuperar contraseña</Link></p>
+        <p style={{ marginBottom: '5vh' }}><Link to="/recover-password">Recuperar contraseña</Link></p>
       </div>
     </>
   );
