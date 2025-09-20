@@ -1,0 +1,35 @@
+#signup-page #pills-icon {
+  width: 105px;
+  height: 105px;
+  fill: black;
+}
+
+#signup-page #pills-icon-container {
+  margin-top: 83px;
+  margin-bottom: 83px;
+}
+
+#signup-page label {
+  margin-bottom: 17px;
+}
+
+#signup-page .custom-input-group {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+#signup-page form {
+  margin-bottom: 57px;
+}
+
+#signup-page form button[type="submit"] {
+  padding: 9px 50px;
+  width: fit-content;
+}
+
+#signup-page .signup-form {
+  width: 100%;
+  max-width: 518px;
+  display: flex;
+  flex-direction: column;
+}
