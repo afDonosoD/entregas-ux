@@ -4,6 +4,7 @@ $secondary: #8E8E93;
 $success: #049976;
 $warning: #FF9900;
 $danger: #FF3B30;
+$bs-btn-disabled-bg: #C2DDFF;
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -53,4 +54,20 @@ h2 {
   b {
     font-weight: 700;
   }
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  background-color: var(--color-secondary-light);
+  color: black;
+  border-radius: 10px;
+  padding: 19px 15px;
+  height: 60px;
+  width: 100%;
+  max-width: 100%;
+}
+
+button:disabled {
+  background-color: var(--color-primary-light);
 }
