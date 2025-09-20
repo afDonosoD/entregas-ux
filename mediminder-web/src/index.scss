@@ -4,7 +4,6 @@ $secondary: #8E8E93;
 $success: #049976;
 $warning: #FF9900;
 $danger: #FF3B30;
-$bs-btn-disabled-bg: #C2DDFF;
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -70,7 +69,8 @@ input[type="password"] {
 }
 
 button:disabled {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light) !important;
+  border: none !important;
 }
 
 button:hover {

@@ -17,13 +17,13 @@ function Login() {
         <form className='w-100 login-form'>
           <div className="custom-input-group w-100">
             <label htmlFor="email" className="form-label">Correo</label>
-            <input type="email" className="form-control" id="email" placeholder='Correo' required />
+            <input type="email" className="form-control" id="email" placeholder='Correo' required value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="custom-input-group w-100" style={{ marginBottom: '56px' }}>
             <label htmlFor="password" className="form-label">Clave</label>
-            <input type="password" className="form-control" id="password" placeholder='Clave' required />
+            <input type="password" className="form-control" id="password" placeholder='Clave' required value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <button type="submit" className="btn btn-primary rounded-pill align-self-center" disabled>Iniciar Sesión</button>
+          <button type="submit" className="btn btn-primary rounded-pill align-self-center" disabled={!email || !password}>Iniciar Sesión</button>
         </form>
 
         <p>¿No tienes una cuenta? <Link to="/signup">Regístrate</Link></p>
