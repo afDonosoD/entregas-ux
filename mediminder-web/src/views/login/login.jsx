@@ -9,9 +9,11 @@ function Login() {
 
   return (
     <>
-      <div className="container d-flex flex-column justify-content-center align-items-center vh-100">
+      <div id="login-page" className="container d-flex flex-column justify-content-center align-items-center vh-100">
         <h1>Mediminder</h1>
-        <PillsFillIcon id='pills-icon' />
+        <div id='pills-icon-container'>
+          <PillsFillIcon id='pills-icon' />
+        </div>
         <form className='w-100 login-form'>
           <div className="custom-input-group w-100">
             <label htmlFor="email" className="form-label">Correo</label>
@@ -25,7 +27,7 @@ function Login() {
         </form>
 
         <p>¿No tienes una cuenta? <Link to="/signup">Regístrate</Link></p>
-        <p style={{ marginBottom: '25px' }}><Link to="/reset-password">Recuperar contraseña</Link></p>
+        <p style={{ marginBottom: '25px' }}><Link to="/recover-password">Recuperar contraseña</Link></p>
       </div>
     </>
   );

@@ -1,41 +1,33 @@
-h1 {
-  color: var(--color-primary);
-}
-
-#pills-icon {
+#login-page #pills-icon {
   width: 105px;
   height: 105px;
   fill: black;
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 
-@media (min-width: 992px) {
-  #pills-icon {
-    margin-top: 83px;
-    margin-bottom: 83px;
-  }
+#login-page #pills-icon-container {
+  margin-top: 83px;
+  margin-bottom: 83px;
 }
 
-label {
+#login-page label {
   margin-bottom: 17px;
 }
 
-.custom-input-group {
+#login-page .custom-input-group {
   margin-bottom: 24px;
   width: 100%;
 }
 
-form {
+#login-page form {
   margin-bottom: 57px;
 }
 
-form button[type="submit"] {
+#login-page form button[type="submit"] {
   padding: 9px 50px;
   width: fit-content;
 }
 
-.login-form {
+#login-page .login-form {
   width: 100%;
   max-width: 518px;
   display: flex;

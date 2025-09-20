@@ -4,17 +4,21 @@ import './index.scss'
 import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Login from './views/login/login.jsx'
+import RecoverPassword from './views/recover-password/recover-password.jsx'
 // Import our custom CSS
 
 // Import all of Bootstrap’s JS
 import * as bootstrap from 'bootstrap'
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+      <div className="toast-container position-fixed top-0 end-0 p-3" id="toast-root"></div>
       <Routes>
         <Route index element={<App />} />
         <Route path='login' element={<Login />} />
+        <Route path='recover-password' element={<RecoverPassword />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

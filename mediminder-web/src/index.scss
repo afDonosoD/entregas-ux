@@ -25,7 +25,7 @@ $bs-btn-disabled-bg: #C2DDFF;
 
   --color-success-light: #D0FFF4;
   --color-success: #{$success};
-  --color-sucess-dark: #00644C;
+  --color-success-dark: #00644C;
 
   --color-danger-light: #FFC3BF;
   --color-danger: #{$danger};
@@ -45,6 +45,7 @@ body {
 h1 {
   font-size: 32px;
   font-weight: 700;
+  color: var(--color-primary);
 }
 
 h2 {
@@ -70,4 +71,62 @@ input[type="password"] {
 
 button:disabled {
   background-color: var(--color-primary-light);
+}
+
+button:hover {
+  box-shadow: 0 4px 8px 0 #C2DDFF;
+}
+
+.primary-text {
+  color: var(--color-primary);
+}
+
+.primary-bg {
+  background-color: var(--color-primary-light);
+}
+
+.primary-style {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.success-text {
+  color: var(--color-success-dark);
+  stroke: var(--color-success-dark);
+  fill: var(--color-success-dark);
+}
+
+.success-bg {
+  background-color: var(--color-success-light);
+}
+
+.success-style {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.danger-text {
+  color: var(--color-danger-dark);
+}
+
+.danger-bg {
+  background-color: var(--color-danger-light);
+}
+
+.danger-style {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+
+.warning-text {
+  color: var(--color-warning-dark);
+}
+
+.warning-bg {
+  background-color: var(--color-warning-light);
+}
+
+.warning-style {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
 }
