@@ -1,0 +1,10 @@
+h1 {
+  color: var(--color-primary);
+}
+
+#pills-icon {
+  width: 105px;
+  height: 105px;
+  color: black;
+  
+}

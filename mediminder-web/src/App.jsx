@@ -1,10 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Login from './views/login/login.jsx'
+import { useLocalStorage } from './hooks/UseLocalStorage.js'
+import { useNavigate } from 'react-router'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [activeUser, setActiveUser] = useLocalStorage('activeUser', null);
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (!activeUser) {
+      navigate('/login');
+    }
+  }, []);
 
   return (
     <>
