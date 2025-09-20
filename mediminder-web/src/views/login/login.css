@@ -6,4 +6,38 @@ h1 {
   width: 105px;
   height: 105px;
   fill: black;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 992px) {
+  #pills-icon {
+    margin-top: 83px;
+    margin-bottom: 83px;
+  }
+}
+
+label {
+  margin-bottom: 17px;
+}
+
+.custom-input-group {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+form {
+  margin-bottom: 57px;
+}
+
+form button[type="submit"] {
+  padding: 9px 50px;
+  width: fit-content;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 518px;
+  display: flex;
+  flex-direction: column;
 }
