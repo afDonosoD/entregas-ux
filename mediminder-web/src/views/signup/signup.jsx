@@ -1,16 +1,24 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import './signup.css';
 import { useState } from 'react';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useToast } from '../../hooks/useToast';
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [_, setActiveUser] = useLocalStorage('activeUser', null);
+  const { showToast } = useToast();
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Send to dashboard
+
+    setActiveUser({ email, password, name, lastName });
+    showToast('¡Cuenta creada con éxito!', { type: 'success' });
+    navigate('/');
   }
 
   return (

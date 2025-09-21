@@ -1,11 +1,24 @@
 import './login.css'
 import PillsFillIcon from '../../assets/pills.fill.svg?react'
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useState } from 'react';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useToast } from '../../hooks/useToast';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [_, setActiveUser] = useLocalStorage('activeUser', null);
+  const { showToast } = useToast();
+  let navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    setActiveUser({ email, password });
+    showToast('¡Inicio de sesión exitoso!', { type: 'success' });
+    navigate('/');
+  }
 
   return (
     <>
@@ -23,7 +36,7 @@ function Login() {
             <label htmlFor="password" className="form-label">Clave</label>
             <input type="password" className="form-control" id="password" placeholder='Clave' required value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <button type="submit" className="btn btn-primary rounded-pill align-self-center" disabled={!email || !password}>Iniciar sesión</button>
+          <button type="submit" className="btn btn-primary rounded-pill align-self-center" disabled={!email || !password} onClick={handleLogin}>Iniciar sesión</button>
         </form>
 
         <p>¿No tienes una cuenta? <Link to="/signup">Regístrate</Link></p>

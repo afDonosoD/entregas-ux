@@ -3,12 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Login from './views/login/login.jsx'
-import { useLocalStorage } from './hooks/UseLocalStorage.js'
+import { useLocalStorage } from './hooks/useLocalStorage.js'
 import { useNavigate } from 'react-router'
+import { useToast } from './hooks/useToast.js'
 
 function App() {
   const [count, setCount] = useState(0);
   const [activeUser, setActiveUser] = useLocalStorage('activeUser', null);
+  const { showToast } = useToast();
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -16,6 +18,12 @@ function App() {
       navigate('/login');
     }
   }, []);
+
+  const handleSignOut = () => {
+    setActiveUser(null);
+    showToast('Sesión finalizada', { type: 'warning' });
+    navigate('/login');
+  }
 
   return (
     <>
@@ -39,6 +47,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <button onClick={handleSignOut}>Sign out</button>
     </>
   )
 }
