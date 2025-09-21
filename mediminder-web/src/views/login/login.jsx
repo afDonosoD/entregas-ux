@@ -17,7 +17,7 @@ function Login() {
 
     setActiveUser({ email, password });
     showToast('¡Inicio de sesión exitoso!', { type: 'success' });
-    navigate('/');
+    navigate('/home');
   }
 
   return (

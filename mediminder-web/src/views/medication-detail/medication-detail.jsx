@@ -33,7 +33,7 @@ function MedicationDetail({ name, dosage, schedule=[] }) {
               <tbody>
                 {schedule.map((entry) => (
                   <tr>
-                    <td style={{ paddingRight: '16px', paddingBottom: '16px' }}>{entry.time}</td>
+                    <td style={{ paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px' }}>{entry.time}</td>
                     <td>
                       <div className='days-container d-flex flex-row'>
                         <div className={`day ${entry.days.includes('L') ? 'selected' : ''}`}>L</div>

@@ -1,0 +1,46 @@
+#home-page .select-medicine {
+  background-color: #E4E4E4;
+  color: black;
+  border-radius: 15px;
+  height: 50px;
+  width: 100%;
+  max-width: 100%;
+}
+
+#home-page .active-input {
+  background-color: #FFFFFF;
+  color: black;
+  border-radius: 15px;
+  padding: 15px 15px;
+  height: 50px;
+  width: 100%;
+  max-width: 100%;
+}
+
+#home-page .disabled-input {
+  background-color: #E4E4E4;
+  color: black;
+  border-radius: 15px;
+  padding: 15px 15px;
+  height: 50px;
+  width: 100%;
+  max-width: 100%;
+}
+
+#home-page .border-blue-left {
+  border-left: 2px solid var(--color-primary);
+}
+
+#home-page .border-blue-right {
+  border-right: 2px solid var(--color-primary);
+}
+
+#home-page .container-calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#home-page .row-calendar {
+  flex-grow: 1;
+}
