@@ -1,6 +1,6 @@
 // Import all of Bootstrap’s CSS
 $primary: #00459E;
-$secondary: #8E8E93;
+$secondary: #E4E4E4;
 $success: #049976;
 $warning: #FF9900;
 $danger: #FF3B30;
@@ -10,6 +10,14 @@ $danger: #FF3B30;
   font-family: 'SF Pro Rounded';
   src: url('./assets/SF-Pro-Rounded-Regular.otf') format('opentype');
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('./assets/SF-Pro-Rounded-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 :root {
@@ -19,8 +27,8 @@ $danger: #FF3B30;
   --color-primary: #{$primary};
   --color-primary-light: #C2DDFF;
 
-  --color-secondary: #{$secondary};
-  --color-secondary-light: #E4E4E4;
+  --color-secondary: #8E8E93;
+  --color-secondary-light: #{$secondary};
 
   --color-success-light: #D0FFF4;
   --color-success: #{$success};
@@ -50,10 +58,6 @@ h1 {
 h2 {
   font-size: 18px;
   font-weight: 400;
-
-  b {
-    font-weight: 700;
-  }
 }
 
 input[type="email"],
@@ -68,13 +72,18 @@ input[type="password"] {
   max-width: 100%;
 }
 
-button:disabled {
+button.btn-primary:disabled {
   background-color: var(--color-primary-light) !important;
   border: none !important;
 }
 
-button:hover {
+button.btn-primary:hover {
   box-shadow: 0 4px 8px 0 #C2DDFF;
+}
+
+div.modal-content {
+  border-radius: 50px;
+  padding: 32px;
 }
 
 .primary-text {
