@@ -54,7 +54,7 @@ h2 {
   background-color: var(--color-primary);
   color: white;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 16px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
   line-height: 1;
 }
@@ -62,4 +62,30 @@ h2 {
 #medication-create .td-open {
   background-color: var(--color-secondary-light);
   border-radius: 12px;
+}
+
+#medication-create .input-hour {
+  background-color: var(--color-secondary-light);
+  border-radius: 12px;
+  color: black;
+  height: 50px;
+  padding: 8px;
+}
+
+#medication-create .input-hour {
+  background-color: var(--color-secondary-light);
+  border-radius: 12px;
+  color: black;
+  height: 50px;
+  padding: 8px;
+}
+
+#medication-create .input-hour::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+#medication-create .input-hour::placeholder {
+  color: black;
+  opacity: 1;
 }

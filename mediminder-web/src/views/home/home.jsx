@@ -71,7 +71,7 @@ function Home() {
                 <input
                   type="text"
                   class="form-control active-input"
-                  placeholder="Eg. 1234567890"
+                  placeholder="1234567890"
                   value={cc}
                   required
                   onChange={(e) => setCC(e.target.value)}
@@ -82,6 +82,7 @@ function Home() {
                 <input
                   type="text"
                   class="form-control disabled-input"
+                  placeholder="Mary Díaz"
                   disabled
                   onChange={(e) => setCC(e.target.value)}
                 />

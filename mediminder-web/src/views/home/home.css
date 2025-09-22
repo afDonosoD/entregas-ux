@@ -64,3 +64,13 @@
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
   line-height: 1;
 }
+
+#home-page .active-input::placeholder {
+  color: black;
+  opacity: 1; /* Optional: makes sure it's not transparent */
+}
+
+#home-page .disabled-input::placeholder {
+  color: black;
+  opacity: 1;
+}

@@ -1,13 +1,18 @@
 import { useNavigate } from "react-router";
 import PillFillIcon from "../../assets/pill.fill.svg?react";
 import "./medication-create.css";
+import { useToast } from "../../hooks/useToast";
 
 function MedicationCreate({ schedule = [] }) {
   let navigate = useNavigate();
+  const { showToast } = useToast();
 
   const handleDetail = (e) => {
     e.preventDefault();
 
+    showToast("¡Creación exitosa! Mary Díaz ha sido notificada", {
+      type: "success",
+    });
     navigate("/home-detail");
   };
 
@@ -104,17 +109,12 @@ function MedicationCreate({ schedule = [] }) {
                 {schedule.map((entry) => (
                   <tr>
                     <td style={{ paddingBottom: "10px" }}>
-                      <div
-                        class="td-open d-flex flex-row "
-                        style={{
-                          paddingTop: "10px",
-                          paddingBottom: "10px",
-                          paddingRight: "8px",
-                          paddingLeft: "8px",
-                        }}
-                      >
-                        {entry.time}
-                      </div>
+                      <input
+                        type="text"
+                        class="form-control input-hour"
+                        placeholder={entry.time}
+                        required
+                      />
                     </td>
                     <td style={{ paddingBottom: "10px", paddingLeft: "10px" }}>
                       <div className="days-container d-flex flex-row justify-content-center align-items-center">
