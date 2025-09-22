@@ -5,11 +5,41 @@ import { useState } from "react";
 import MedicationCreate from "../medication-create/medication-create";
 import PillFillIcon from "../../assets/pill.fill.svg?react";
 import MedicationDetail from "../medication-detail/medication-detail";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function HomeDetail() {
   const { showToast } = useToast();
   const [cc, setCC] = useState("");
   let navigate = useNavigate();
+  const data = {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
   const handleSignOut = (e) => {
     e.preventDefault();
@@ -90,6 +120,9 @@ function HomeDetail() {
                   onChange={(e) => setCC(e.target.value)}
                 />
               </div>
+              <div class="col-2">
+                <Doughnut data={data} />
+              </div>
             </div>
           </div>
 
@@ -127,7 +160,6 @@ function HomeDetail() {
 
                     <div className="align-items-start d-flex flex-column">
                       <p className="modal-title" style={{ color: "black" }}>
-                        {" "}
                         <b>Acetaminofén</b>
                       </p>
                       <p
@@ -148,18 +180,163 @@ function HomeDetail() {
               </div>
               <div class="col-2 border-blue-left">
                 <p class="p-0 m-0">15</p>
+                <div
+                  className="d-flex justify-content-between align-items-center primary-button-border mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#medication-detail"
+                >
+                  <div className="pill-info d-flex flex-row align-items-center m-2">
+                    <div className="icon-background d-inline-flex justify-content-center align-items-center bg-primary">
+                      <PillFillIcon width="16px" height="16px" />
+                    </div>
+
+                    <div className="align-items-start d-flex flex-column">
+                      <p className="modal-title" style={{ color: "black" }}>
+                        <b>Acetaminofén</b>
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        1 pastilla
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        9:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-2 border-blue-left">
                 <p class="p-0 m-0">16</p>
+                <div
+                  className="d-flex justify-content-between align-items-center primary-button-border mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#medication-detail"
+                >
+                  <div className="pill-info d-flex flex-row align-items-center m-2">
+                    <div className="icon-background d-inline-flex justify-content-center align-items-center bg-primary">
+                      <PillFillIcon width="16px" height="16px" />
+                    </div>
+
+                    <div className="align-items-start d-flex flex-column">
+                      <p className="modal-title" style={{ color: "black" }}>
+                        <b>Acetaminofén</b>
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        1 pastilla
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        9:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-2 border-blue-left">
                 <p class="p-0 m-0">17</p>
+                <div
+                  className="d-flex justify-content-between align-items-center primary-button-border mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#medication-detail"
+                >
+                  <div className="pill-info d-flex flex-row align-items-center m-2">
+                    <div className="icon-background d-inline-flex justify-content-center align-items-center bg-primary">
+                      <PillFillIcon width="16px" height="16px" />
+                    </div>
+
+                    <div className="align-items-start d-flex flex-column">
+                      <p className="modal-title" style={{ color: "black" }}>
+                        <b>Acetaminofén</b>
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        1 pastilla
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        9:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-2 border-blue-left">
                 <p class="p-0 m-0">18</p>
+                <div
+                  className="d-flex justify-content-between align-items-center primary-button-border mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#medication-detail"
+                >
+                  <div className="pill-info d-flex flex-row align-items-center m-2">
+                    <div className="icon-background d-inline-flex justify-content-center align-items-center bg-primary">
+                      <PillFillIcon width="16px" height="16px" />
+                    </div>
+
+                    <div className="align-items-start d-flex flex-column">
+                      <p className="modal-title" style={{ color: "black" }}>
+                        <b>Acetaminofén</b>
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        1 pastilla
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        9:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-2 border-blue-left border-blue-right">
                 <p class="p-0 m-0">19</p>
+                <div
+                  className="d-flex justify-content-between align-items-center primary-button-border mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#medication-detail"
+                >
+                  <div className="pill-info d-flex flex-row align-items-center m-2">
+                    <div className="icon-background d-inline-flex justify-content-center align-items-center bg-primary">
+                      <PillFillIcon width="16px" height="16px" />
+                    </div>
+
+                    <div className="align-items-start d-flex flex-column">
+                      <p className="modal-title" style={{ color: "black" }}>
+                        <b>Acetaminofén</b>
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        1 pastilla
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        9:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
