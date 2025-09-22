@@ -1,10 +1,12 @@
-import "./home.css";
+import "./home-detail.css";
 import { useNavigate } from "react-router";
 import { useToast } from "../../hooks/useToast";
 import { useState } from "react";
 import MedicationCreate from "../medication-create/medication-create";
+import PillFillIcon from "../../assets/pill.fill.svg?react";
+import MedicationDetail from "../medication-detail/medication-detail";
 
-function Home() {
+function HomeDetail() {
   const { showToast } = useToast();
   const [cc, setCC] = useState("");
   let navigate = useNavigate();
@@ -40,7 +42,7 @@ function Home() {
           </div>
         </nav>
         <div
-          id="home-page"
+          id="home-detail-page"
           className="container-fluid d-flex flex-column vh-100"
         >
           <div class="row mt-1">
@@ -71,10 +73,11 @@ function Home() {
                 <input
                   type="text"
                   class="form-control active-input"
-                  placeholder="Eg. 1234567890"
+                  placeholder="1234567890"
                   value={cc}
                   required
                   onChange={(e) => setCC(e.target.value)}
+                  style={{ color: "black" }}
                 />
               </div>
               <div class="col-2">
@@ -82,6 +85,7 @@ function Home() {
                 <input
                   type="text"
                   class="form-control disabled-input"
+                  placeholder="Mary Díaz"
                   disabled
                   onChange={(e) => setCC(e.target.value)}
                 />
@@ -111,6 +115,36 @@ function Home() {
             <div class="row row-calendar">
               <div class="col-2 border-blue-left">
                 <p class="p-0 m-0">14</p>
+                <div
+                  className="d-flex justify-content-between align-items-center primary-button-border mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#medication-detail"
+                >
+                  <div className="pill-info d-flex flex-row align-items-center m-2">
+                    <div className="icon-background d-inline-flex justify-content-center align-items-center bg-primary">
+                      <PillFillIcon width="16px" height="16px" />
+                    </div>
+
+                    <div className="align-items-start d-flex flex-column">
+                      <p className="modal-title" style={{ color: "black" }}>
+                        {" "}
+                        <b>Acetaminofén</b>
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        1 pastilla
+                      </p>
+                      <p
+                        className="modal-title small-text"
+                        style={{ color: "black" }}
+                      >
+                        9:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-2 border-blue-left">
                 <p class="p-0 m-0">15</p>
@@ -131,6 +165,14 @@ function Home() {
           </div>
         </div>
       </div>
+      <MedicationDetail
+        name="Acetaminofén"
+        dosage="1 pastilla"
+        schedule={[
+          { time: "9:00 a.m.", days: ["L", "M", "M", "J", "V"] },
+          { time: "10:00 a.m.", days: ["S", "D"] },
+        ]}
+      />
       <MedicationCreate
         name="Acetaminofén"
         dosage="1 pastilla"
@@ -143,4 +185,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeDetail;

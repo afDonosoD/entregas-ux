@@ -1,4 +1,4 @@
-#home-page .select-medicine {
+#home-detail-page .select-medicine {
   background-color: var(--color-secondary-light);
   color: black;
   border-radius: 15px;
@@ -7,8 +7,8 @@
   max-width: 100%;
 }
 
-#home-page .active-input {
-  background-color: #FFFFFF;
+#home-detail-page .active-input {
+  background-color: #ffffff;
   color: black;
   border-radius: 15px;
   padding: 15px 15px;
@@ -17,7 +17,7 @@
   max-width: 100%;
 }
 
-#home-page .disabled-input {
+#home-detail-page .disabled-input {
   background-color: var(--color-secondary-light);
   color: black;
   border-radius: 15px;
@@ -27,37 +27,34 @@
   max-width: 100%;
 }
 
-#home-page .border-blue-left {
+#home-detail-page .border-blue-left {
   border-left: 2px solid var(--color-primary);
 }
 
-#home-page .border-blue-right {
+#home-detail-page .border-blue-right {
   border-right: 2px solid var(--color-primary);
 }
 
-#home-page .container-calendar {
+#home-detail-page .container-calendar {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-#home-page .row-calendar {
+#home-detail-page .row-calendar {
   flex-grow: 1;
 }
 
-#home-page .primary-button-border {
+#home-detail-page .primary-button-border {
   border: 1px solid var(--color-primary);
   border-radius: 15px;
-
 }
 
-
-#home-page .primary-button-border:hover {
+#home-detail-page .primary-button-border:hover {
   background-color: var(--color-primary-light);
 }
 
-
-#home-page .circle-icon {
+#home-detail-page .circle-icon {
   width: 35px;
   height: 35px;
   background-color: var(--color-primary); /* Azul sólido */
@@ -65,4 +62,29 @@
   border-radius: 50%;
   font-size: 25px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.active-input::placeholder {
+  color: black;
+  opacity: 1; /* Optional: makes sure it's not transparent */
+}
+
+.disabled-input::placeholder {
+  color: black;
+  opacity: 1; /* Optional: makes sure it's not transparent */
+}
+
+#home-detail-page .pill-info {
+  gap: 8px;
+}
+
+#home-detail-page .icon-background {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px 0 rgba(0, 69, 158, 0.2);
+}
+
+#home-detail-page .small-text {
+  font-size: 12px;
 }

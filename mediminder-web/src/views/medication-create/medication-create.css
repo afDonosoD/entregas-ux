@@ -1,0 +1,63 @@
+h2 {
+   margin-top: 30px;
+ }
+
+#medication-create .active-input {
+  background-color: #FFFFFF;
+  color: black;
+  border-radius: 15px;
+  padding: 15px 15px;
+  height: 60px;
+  width: 100%;
+  max-width: 100%;
+}
+
+#medication-create .day {
+  width: 30px;
+  height: 30px;
+  color: white;
+  background-color: var(--color-secondary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.selected {
+    background-color: var(--color-primary);
+  }
+}
+
+#medication-create .day-deleted {
+  width: 25px;
+  height: 25px;
+  color: white;
+  background-color: var(--color-danger);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#medication-create .days-container {
+  gap: 8px;
+}
+
+#medication-create th {
+  padding: 0;
+  font-weight: 400;
+}
+
+#medication-create .circle-icon {
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-primary); 
+  color: white;
+  border-radius: 50%;
+  font-size: 15px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+#medication-create .td-open {
+  background-color: var(--color-secondary-light);
+  border-radius: 12px;
+}

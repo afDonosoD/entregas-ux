@@ -49,7 +49,6 @@ function MedicationDetail({ name, dosage, schedule=[] }) {
                 ))}
               </tbody>
             </table>
-
           </div>
         </div>
       </div>
