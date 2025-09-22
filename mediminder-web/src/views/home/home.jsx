@@ -58,7 +58,7 @@ function Home() {
                 data-bs-target="#medication-create"
               >
                 <div class="circle-icon d-flex justify-content-center align-items-center">
-                  +
+                  <i class="bi bi-plus"></i>
                 </div>
                 <div class="reminder-text">Crear recordatorio</div>
               </button>

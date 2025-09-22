@@ -1,9 +1,9 @@
 h2 {
-   margin-top: 30px;
- }
+  margin-top: 30px;
+}
 
 #medication-create .active-input {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: black;
   border-radius: 15px;
   padding: 15px 15px;
@@ -36,6 +36,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
 }
 
 #medication-create .days-container {
@@ -50,11 +51,12 @@ h2 {
 #medication-create .circle-icon {
   width: 25px;
   height: 25px;
-  background-color: var(--color-primary); 
+  background-color: var(--color-primary);
   color: white;
   border-radius: 50%;
   font-size: 15px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1;
 }
 
 #medication-create .td-open {

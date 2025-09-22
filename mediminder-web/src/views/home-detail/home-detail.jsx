@@ -15,27 +15,12 @@ function HomeDetail() {
   const [cc, setCC] = useState("");
   let navigate = useNavigate();
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Dosis tomadas", "Dosis no tomadas"],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
+        data: [12, 3],
+        backgroundColor: ["#00459E", "#E4E4E4"],
+        borderColor: ["#00459E", "#E4E4E4"],
         borderWidth: 1,
       },
     ],
@@ -90,56 +75,62 @@ function HomeDetail() {
                 data-bs-target="#medication-create"
               >
                 <div class="circle-icon d-flex justify-content-center align-items-center">
-                  +
+                  <i class="bi bi-plus"></i>
                 </div>
                 <div class="reminder-text">Crear recordatorio</div>
               </button>
             </div>
           </div>
-          <div class="container-fluid p-0">
-            <div class="row">
-              <div class="col-2">
-                <p class="p-0 m-0">C.C.</p>
-                <input
-                  type="text"
-                  class="form-control active-input"
-                  placeholder="1234567890"
-                  value={cc}
-                  required
-                  onChange={(e) => setCC(e.target.value)}
-                  style={{ color: "black" }}
-                />
+
+          <div class="row">
+            <div class="col-6">
+              <div class="container-fluid p-0">
+                <div class="row">
+                  <div class="col-4">
+                    <p class="p-0 m-0">C.C.</p>
+                    <input
+                      type="text"
+                      class="form-control active-input"
+                      placeholder="1234567890"
+                      value={cc}
+                      required
+                      onChange={(e) => setCC(e.target.value)}
+                      style={{ color: "black" }}
+                    />
+                  </div>
+                  <div class="col-4">
+                    <p class="p-0 m-0">Nombre completo</p>
+                    <input
+                      type="text"
+                      class="form-control disabled-input"
+                      placeholder="Mary Díaz"
+                      disabled
+                      onChange={(e) => setCC(e.target.value)}
+                    />
+                  </div>
+                </div>
               </div>
-              <div class="col-2">
-                <p class="p-0 m-0">Nombre completo</p>
-                <input
-                  type="text"
-                  class="form-control disabled-input"
-                  placeholder="Mary Díaz"
-                  disabled
-                  onChange={(e) => setCC(e.target.value)}
-                />
-              </div>
-              <div class="col-2">
-                <Doughnut data={data} />
+
+              <div class="container-fluid p-0 mt-2">
+                <div class="row">
+                  <div class="col-8">
+                    <p class="p-0 m-0">Medicina</p>
+                    <select
+                      class="form-select select-medicine"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Todas</option>
+                      <option value="1">Acetaminofén</option>
+                      <option value="2">Dolex</option>
+                      <option value="3">Aspirina</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="container-fluid p-0 mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p class="p-0 m-0">Medicina</p>
-                <select
-                  class="form-select select-medicine"
-                  aria-label="Default select example"
-                >
-                  <option selected>Todas</option>
-                  <option value="1">Acetaminofén</option>
-                  <option value="2">Dolex</option>
-                  <option value="3">Aspirina</option>
-                </select>
-              </div>
+            <div class="col-2">
+              <Doughnut data={data} style={{maxHeight: '200px'}} />
             </div>
           </div>
 

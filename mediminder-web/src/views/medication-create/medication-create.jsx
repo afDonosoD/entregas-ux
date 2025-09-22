@@ -167,7 +167,9 @@ function MedicationCreate({ schedule = [] }) {
                         >
                           D
                         </div>
-                        <div className={`day-deleted`}>-</div>
+                        <div className={`day-deleted`}>
+                          <i class="bi bi-dash"></i>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -175,7 +177,7 @@ function MedicationCreate({ schedule = [] }) {
                 <tr>
                   <td class="justify-content-center align-items-center d-flex">
                     <div class="circle-icon d-flex justify-content-center align-items-center">
-                      +
+                      <i class="bi bi-plus"></i>
                     </div>
                   </td>
                 </tr>

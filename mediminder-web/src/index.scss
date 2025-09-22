@@ -5,6 +5,8 @@ $success: #049976;
 $warning: #FF9900;
 $danger: #FF3B30;
 @import "bootstrap/scss/bootstrap";
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
+@import "bootstrap-icons/font/bootstrap-icons";
 
 @font-face {
   font-family: 'SF Pro Rounded';
@@ -147,3 +149,13 @@ div.modal-content {
 .font-weight-600 {
   font-weight: 600;
 }
+
+.navbar-brand:hover {
+  color: var(--color-primary-light);
+  text-decoration: none;
+} 
+
+.navbar-text:hover {
+  color: var(--color-primary-light);
+  text-decoration: none;
+} 

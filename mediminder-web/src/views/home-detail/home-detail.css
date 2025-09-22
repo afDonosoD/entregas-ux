@@ -55,13 +55,14 @@
 }
 
 #home-detail-page .circle-icon {
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   background-color: var(--color-primary); /* Azul sólido */
   color: white;
   border-radius: 50%;
-  font-size: 25px;
+  font-size: 24px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1;
 }
 
 #home-detail-page .active-input::placeholder {
