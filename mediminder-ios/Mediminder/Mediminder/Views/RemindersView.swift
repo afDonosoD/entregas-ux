@@ -9,26 +9,6 @@ import SwiftUI
 
 struct RemindersView: View {
 	var body: some View {
-		//		GeometryReader { proxy in
-		//			ZStack(alignment: .topLeading) {
-		//				Image(.day)
-		//					.resizable()
-		//					.aspectRatio(contentMode: .fit)
-		//					.frame(width: proxy.size.width / 1.5)
-		//
-		//				VStack {
-		//					HStack {
-		//						Spacer()
-		//
-		//						VStack {
-		//							Text("Domingo")
-		//							Text("Septiembre 14")
-		//						}
-		//					}
-		//				}
-		//			} //: ZStack
-		//			.ignoresSafeArea()
-		//		} //: GeometryReader
 		VStack {
 			HStack {
 				Spacer()
