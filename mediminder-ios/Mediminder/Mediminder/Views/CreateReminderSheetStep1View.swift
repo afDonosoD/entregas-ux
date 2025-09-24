@@ -132,9 +132,14 @@ struct CreateReminderSheetStep1View: View {
                     .background(Color(.systemBackground))
                 }
             }
-            .navigationTitle("Nuevo Recordatorio")
+            .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+				ToolbarItem(placement: .principal) {
+					Text("Nuevo Recordatorio")
+						.customSuperSmall()
+				}
+				
                 ToolbarItem(placement: .cancellationAction) {
                     Button(role: .cancel) {
                         onCancel()
