@@ -8,83 +8,206 @@
 import SwiftUI
 
 struct RemindersView: View {
-	var body: some View {
-		GeometryReader { proxy in
-			VStack {
-				HStack {
-					Spacer()
-					
-					VStack(alignment: .trailing) {
-						Text("Domingo\nSeptiembre 14")
-							.customTitle()
-							.padding(.bottom, 16)
-						
-						Text("¡Buenos días, Mary!")
-							.customTitle2()
-							.padding(.bottom, 8)
-						
-						Text("Hoy **no tienes** medicinas pendientes por tomar")
-							.customTitle2()
-					} //: VStack
-					.multilineTextAlignment(.trailing)
-					.frame(maxWidth: proxy.size.width / 1.618, alignment: .trailing)
-				} //: HStack
-				.padding(.trailing, 16)
-				.padding(.bottom, 22)
-				
-				CalendarView()
-					.padding(.horizontal, 35)
-				
-				ContentUnavailableView {
-					VStack(spacing: 12) {
-						Image(systemName: "pills.fill")
-							.foregroundStyle(.secondary)
-							.font(.custom("SF Pro Rounded", size: 40))
-						
-						Text("¡No hay pastillas para tomar por hoy!")
-							.customBody()
-							.fontWeight(.bold)
-							.foregroundStyle(.secondary)
-						
-						Text("Para registrar más recordatorios haz click en el botón \"+\"")
-							.customBody()
-							.foregroundStyle(.secondary)
-					}
-				}
+    
+    @State private var isShowingSheet = false
+    @State private var medicine = ""
+    @State private var quantity = ""
+    @State private var measure = ""
+    
+    var body: some View {
+        GeometryReader { proxy in
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    VStack(alignment: .trailing) {
+                        Text("Domingo\nSeptiembre 14")
+                            .customTitle()
+                            .padding(.bottom, 16)
+                        
+                        Text("¡Buenos días, Mary!")
+                            .customTitle2()
+                            .padding(.bottom, 8)
+                        
+                        Text("Hoy **no tienes** medicinas pendientes por tomar")
+                            .customTitle2()
+                    }
+                    .multilineTextAlignment(.trailing)
+                    .frame(maxWidth: proxy.size.width / 1.618, alignment: .trailing)
+                }
+                .padding(.trailing, 16)
+                .padding(.bottom, 22)
+                
+                CalendarView()
+                    .padding(.horizontal, 35)
+                
+                ContentUnavailableView {
+                    VStack(spacing: 12) {
+                        Image(systemName: "pills.fill")
+                            .foregroundStyle(.secondary)
+                            .font(.custom("SF Pro Rounded", size: 40))
+                        
+                        Text("¡No hay pastillas para tomar por hoy!")
+                            .customBody()
+                            .fontWeight(.bold)
+                            .foregroundStyle(.secondary)
+                        
+                        Text("Para registrar más recordatorios haz click en el botón \"+\"")
+                            .customBody()
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                
+                Spacer()
+            }
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    Spacer()
+                    
+                    Button(action: { isShowingSheet.toggle() }) {
+                        Image(systemName: "plus")
+                            .font(.system(size: 20))
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 40, height: 40)
+                    .background(Color.accent)
+                    .clipShape(Circle())
+                    .shadow(color: Color(red: 0, green: 0.27, blue: 0.62).opacity(0.3), radius: 5, x: 0, y: 4)
+                    .sheet(isPresented: $isShowingSheet, onDismiss: didDismiss) {
+                        CreateReminderSheet(
+                            medicine: $medicine,
+                            quantity: $quantity,
+                            measure: $measure,
+                            onCancel: {
+                                isShowingSheet = false
+                            },
+                            onNext: {
+                            }
+                        )
+                    }
+                }
+                .padding(.trailing, 16)
+            }
+            .background {
+                GeometryReader { proxy in
+                    Image(.day)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: proxy.size.width / 1.5)
+                }
+                .ignoresSafeArea()
+            }
+        }
+    }
+    
+    func didDismiss() {
+        // Acción al cerrar el sheet si es necesario
+    }
+}
 
-				
-				Spacer()
-			} //: VStack
-			.safeAreaInset(edge: .bottom) {
-				HStack {
-					Spacer()
-					
-					Button(action: {}) {
-						Image(systemName: "plus")
-							.font(.system(size: 20))
-							.foregroundStyle(.white)
-					}
-					.frame(width: 40, height: 40)
-					.background(Color.accent)
-					.clipShape(Circle())
-					.shadow(color: Color(red: 0, green: 0.27, blue: 0.62).opacity(0.3), radius: 5, x: 0, y: 4)
-				}
-				.padding(.trailing, 16)
-			}
-			.background {
-				GeometryReader { proxy in
-					Image(.day)
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-						.frame(width: proxy.size.width / 1.5)
-				}
-				.ignoresSafeArea()
-			} //: Background
-		} //: GeometryReader
-	}
+struct CreateReminderSheet: View {
+    @Binding var medicine: String
+    @Binding var quantity: String
+    @Binding var measure: String
+    var onCancel: () -> Void
+    var onNext: () -> Void
+
+    var body: some View {
+        NavigationStack {
+            GeometryReader { geometry in
+                VStack(spacing: 0) {
+                    ScrollView {
+                        VStack(spacing: 24) {
+                            Group {
+                                Text("¿Cuál es la medicina?")
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+
+                                TextField("E.g. Salbutamol", text: $medicine)
+                                    .textFieldStyle(.plain)
+                                    .padding()
+                                    .background(Color(.secondarySystemBackground))
+                                    .cornerRadius(12)
+                                    .padding(.horizontal, 50)
+                            }
+
+                            Group {
+                                Text("¿Cuál es la dosis?")
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                
+                                Text("Cantidad")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.horizontal, 50)
+
+                                TextField("E.g. 1, 5, 100", text: $quantity)
+                                    .textFieldStyle(.plain)
+                                    .keyboardType(.decimalPad)
+                                    .padding()
+                                    .background(Color(.secondarySystemBackground))
+                                    .cornerRadius(12)
+                                    .padding(.horizontal, 50)
+
+                                Text("Medida")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.horizontal, 50)
+
+                                TextField("E.g. pastillas, gotas, mL", text: $measure)
+                                    .textFieldStyle(.plain)
+                                    .padding()
+                                    .background(Color(.secondarySystemBackground))
+                                    .cornerRadius(12)
+                                    .padding(.horizontal, 50)
+                            }
+                        }
+                        .frame(minHeight: geometry.size.height * 0.85)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
+
+                    HStack {
+                        Button(role: .cancel) {
+                            onCancel()
+                        } label: {
+                            Text("Regresar")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color(.secondaryLight))
+                                .cornerRadius(50)
+                        }
+
+                        Button {
+                            onNext()
+                        } label: {
+                            Text("Siguiente")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color(.primary))
+                                .cornerRadius(50)
+                        }
+                    }
+                    .padding()
+                    .background(Color(.systemBackground))
+                }
+            }
+            .navigationTitle("Nuevo Recordatorio")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(role: .cancel) {
+                        onCancel()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                }
+            }
+        }
+    }
 }
 
 #Preview {
-	RemindersView()
-		.environment(\.font, .system(size: 16, design: .rounded))
+    RemindersView()
+        .environment(\.font, .system(size: 16, design: .rounded))
 }
+
