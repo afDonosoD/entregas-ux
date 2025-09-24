@@ -74,7 +74,7 @@ struct RemindersView: View {
                     .clipShape(Circle())
                     .shadow(color: Color(red: 0, green: 0.27, blue: 0.62).opacity(0.3), radius: 5, x: 0, y: 4)
                     .sheet(isPresented: $isShowingSheet, onDismiss: didDismiss) {
-                        CreateReminderSheetView(
+                        CreateReminderSheetStep1View(
                             medicine: $medicine,
                             quantity: $quantity,
                             measure: $measure,

@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  CreateReminderSheetStep1View.swift
 //  Mediminder
 //
 //  Created by Germán Martínez Solano on 24/09/25.
@@ -7,12 +7,48 @@
 
 import SwiftUI
 
-struct CreateReminderSheetView: View {
+struct CreateReminderSheetStep1View: View {
     @Binding var medicine: String
     @Binding var quantity: String
     @Binding var measure: String
     var onCancel: () -> Void
     var onNext: () -> Void
+    
+    let hoursBinding = Binding.constant([
+        "9:00 am",
+        "10:00 am",
+        "11:00 am"
+    ])
+    
+    let hoursAndDaysData = [
+        (1, "9:00 am", [
+            (1, "L", true),
+            (2, "M", true),
+            (3, "M", false),
+            (4, "J", false),
+            (5, "V", true),
+            (6, "S", true),
+            (7, "D", true)
+        ]),
+        (2, "10:00 am", [
+            (1, "L", true),
+            (2, "M", true),
+            (3, "M", false),
+            (4, "J", false),
+            (5, "V", true),
+            (6, "S", true),
+            (7, "D", true)
+        ]),
+        (3, "11:00 am", [
+            (1, "L", true),
+            (2, "M", true),
+            (3, "M", false),
+            (4, "J", false),
+            (5, "V", true),
+            (6, "S", true),
+            (7, "D", true)
+        ])
+    ]
     
     var body: some View {
         NavigationStack {
@@ -78,9 +114,12 @@ struct CreateReminderSheetView: View {
                                 .cornerRadius(50)
                         }
                         
-                        Button {
-                            onNext()
-                        } label: {
+                        NavigationLink (destination: CreateReminderSheetStep2View(
+                            hours: hoursBinding,
+                            hoursAndDays: hoursAndDaysData,
+                            onCancel: {onCancel()  },
+                            onNext: { }
+                        )) {
                             Text("Siguiente")
                                 .frame(maxWidth: .infinity)
                                 .padding()
@@ -114,7 +153,7 @@ struct CreateReminderSheetView: View {
         "3",
         "mL"
     )) { medicine, quantity, measure in
-        CreateReminderSheetView(
+        CreateReminderSheetStep1View(
             medicine: medicine,
             quantity: quantity,
             measure: measure,
@@ -129,14 +168,14 @@ struct StatefulPreviewWrapper<T1, T2, T3, Content: View>: View {
     @State var value2: T2
     @State var value3: T3
     var content: (Binding<T1>, Binding<T2>, Binding<T3>) -> Content
-
+    
     init(_ value: (T1, T2, T3), content: @escaping (Binding<T1>, Binding<T2>, Binding<T3>) -> Content) {
         self._value1 = State(initialValue: value.0)
         self._value2 = State(initialValue: value.1)
         self._value3 = State(initialValue: value.2)
         self.content = content
     }
-
+    
     var body: some View {
         content($value1, $value2, $value3)
     }
