@@ -45,7 +45,7 @@ struct ReminderView: View {
 			Spacer()
 			
 			HStack {
-				VStack {
+				VStack(spacing: 3) {
 					Image(systemName: "clock.arrow.trianglehead.clockwise.rotate.90.path.dotted")
 						.font(.system(size: 16))
 						.foregroundStyle(.warningDark)
@@ -59,7 +59,7 @@ struct ReminderView: View {
 				
 				Spacer()
 				
-				VStack {
+				VStack(spacing: 3) {
 					Image(systemName: "chevron.forward.2")
 						.font(.system(size: 16))
 						.foregroundStyle(.accent)
@@ -73,7 +73,7 @@ struct ReminderView: View {
 				
 				Spacer()
 				
-				VStack {
+				VStack(spacing: 3) {
 					Image(systemName: "checkmark")
 						.font(.system(size: 16))
 						.foregroundStyle(.successDark)

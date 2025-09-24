@@ -30,6 +30,14 @@ struct Typography {
 				.font(.system(size: 16, design: .rounded))
 		}
 	}
+	
+	struct SuperSmall: ViewModifier {
+		func body(content: Content) -> some View {
+			content
+				.font(.system(size: 12, design: .rounded))
+				.fontWeight(.bold)
+		}
+	}
 }
 
 extension View {
@@ -43,5 +51,9 @@ extension View {
 	
 	func customBody() -> some View {
 		self.modifier(Typography.Body())
+	}
+	
+	func customSuperSmall() -> some View {
+		self.modifier(Typography.SuperSmall())
 	}
 }
