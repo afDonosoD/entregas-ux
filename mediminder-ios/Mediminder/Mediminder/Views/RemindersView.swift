@@ -12,6 +12,7 @@ struct RemindersView: View {
     @State private var medicine = ""
     @State private var quantity = ""
     @State private var measure = ""
+    @State private var showReminder = true
     
     var body: some View {
         GeometryReader { proxy in
@@ -40,6 +41,11 @@ struct RemindersView: View {
                 CalendarView()
                     .padding(.horizontal, 35)
                 
+                if showReminder {
+					ReminderView()
+						.padding(.horizontal, 16)
+						.padding(.top, 34)
+				} else {
                 ContentUnavailableView {
                     VStack(spacing: 12) {
                         Image(systemName: "pills.fill")
@@ -55,6 +61,7 @@ struct RemindersView: View {
                             .customBody()
                             .foregroundStyle(.secondary)
                     }
+                }
                 }
 
                 
