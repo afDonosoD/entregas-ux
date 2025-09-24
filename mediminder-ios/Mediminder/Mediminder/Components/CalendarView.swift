@@ -20,17 +20,19 @@ struct CalendarView: View {
 	
     var body: some View {
 		HStack(alignment: .center) {
-			Spacer()
 			
 			ForEach(days, id: \.dayNumber) { day in
 				VStack(alignment: .center) {
 					Ellipse()
 						.frame(width: 30, height: 30)
 						.foregroundStyle(.secondaryLight)
-					Text("\(day.0)")
-					Text(day.1)
+					Text("\(day.dayNumber)")
+					Text(day.dayName)
 				}
-				Spacer()
+				
+				if day.dayName != "D" {
+					Spacer()
+				}
 			}
 		}
     }
