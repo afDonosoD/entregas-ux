@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RemindersView: View {
-    
     @State private var isShowingSheet = false
     @State private var medicine = ""
     @State private var quantity = ""
@@ -31,10 +30,10 @@ struct RemindersView: View {
                         
                         Text("Hoy **no tienes** medicinas pendientes por tomar")
                             .customTitle2()
-                    }
+                    } //: VStack
                     .multilineTextAlignment(.trailing)
                     .frame(maxWidth: proxy.size.width / 1.618, alignment: .trailing)
-                }
+                } //: HStack
                 .padding(.trailing, 16)
                 .padding(.bottom, 22)
                 
@@ -57,9 +56,10 @@ struct RemindersView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+
                 
                 Spacer()
-            }
+            } //: VStack
             .safeAreaInset(edge: .bottom) {
                 HStack {
                     Spacer()
@@ -96,8 +96,8 @@ struct RemindersView: View {
                         .frame(width: proxy.size.width / 1.5)
                 }
                 .ignoresSafeArea()
-            }
-        }
+            } //: Background
+        } //: GeometryReader
     }
     
     func didDismiss() {
@@ -109,4 +109,3 @@ struct RemindersView: View {
     RemindersView()
         .environment(\.font, .system(size: 16, design: .rounded))
 }
-
