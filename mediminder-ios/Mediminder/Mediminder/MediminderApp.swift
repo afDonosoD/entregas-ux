@@ -13,6 +13,7 @@ struct MediminderApp: App {
         WindowGroup {
             ContentView()
 				.fontDesign(.rounded)
+				.environment(\.font, .custom("SF Pro Rounded", size: 16))
         }
     }
 }
