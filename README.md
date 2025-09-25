@@ -6,6 +6,26 @@ La versión web está en la carpeta [mediminder-web](./mediminder-web/)
 
 La versión iOS está en la carpeta [mediminder-ios](./mediminder-ios/)
 
+## Distribución
+### Web
+- German
+  - Creación de medicina
+  - Detalle medicina
+  - Dashboard
+- Andrés
+  - Login
+  - Registro
+  - Recuperación de contraseña
+
+### iOS
+- German
+  - Pasos 1 y 2 de creación de medicina
+  - Perfil
+- Andrés
+  - Paso confirmación de creación de medicina
+  - Listado de medicinas (vista principal)
+  - Detalle de medicina
+
 ## Demos
 ### Web
 https://github.com/user-attachments/assets/c428f96c-b7ef-4a80-9253-f8069fea6450
