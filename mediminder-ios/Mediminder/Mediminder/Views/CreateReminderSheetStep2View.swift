@@ -15,6 +15,7 @@ struct CreateReminderSheetStep2View: View {
     
     var onCancel: () -> Void
     var onNext: () -> Void
+	var onCreate: () -> Void
     
     
     var body: some View {
@@ -87,9 +88,10 @@ struct CreateReminderSheetStep2View: View {
                                 .cornerRadius(50)
                         }
                         
-                        Button {
-                            onNext()
-                        } label: {
+						NavigationLink (destination: CreateReminderSheetStep3View(
+							onCancel: onCancel,
+							onCreate: onCreate
+						)) {
                             Text("Siguiente")
                                 .frame(maxWidth: .infinity)
                                 .padding()
@@ -106,7 +108,7 @@ struct CreateReminderSheetStep2View: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
 				ToolbarItem(placement: .principal) {
-					Text("Nuevo Recordatorio")
+					Text("Crear Recordatorio")
 						.customSuperSmall()
 				}
 				
@@ -151,6 +153,7 @@ struct CreateReminderSheetStep2View: View {
             (7, "D", true)
         ])],
         onCancel: {},
-        onNext: {}
+        onNext: {},
+		onCreate: {}
     )
 }

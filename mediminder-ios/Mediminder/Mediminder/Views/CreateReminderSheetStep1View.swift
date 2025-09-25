@@ -13,6 +13,7 @@ struct CreateReminderSheetStep1View: View {
     @Binding var measure: String
     var onCancel: () -> Void
     var onNext: () -> Void
+	var onCreate: () -> Void
     
     let hoursBinding = Binding.constant([
         "9:00 am",
@@ -117,8 +118,9 @@ struct CreateReminderSheetStep1View: View {
                         NavigationLink (destination: CreateReminderSheetStep2View(
                             hours: hoursBinding,
                             hoursAndDays: hoursAndDaysData,
-                            onCancel: {onCancel()  },
-                            onNext: { }
+                            onCancel: onCancel,
+                            onNext: { },
+							onCreate: onCreate
                         )) {
                             Text("Siguiente")
                                 .frame(maxWidth: .infinity)
@@ -136,7 +138,7 @@ struct CreateReminderSheetStep1View: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
 				ToolbarItem(placement: .principal) {
-					Text("Nuevo Recordatorio")
+					Text("Crear Recordatorio")
 						.customSuperSmall()
 				}
 				
@@ -163,7 +165,8 @@ struct CreateReminderSheetStep1View: View {
             quantity: quantity,
             measure: measure,
             onCancel: {},
-            onNext: {}
+            onNext: {},
+			onCreate: {}
         )
     }
 }

@@ -21,7 +21,8 @@ struct DaysView: View {
                             day.colored ? Color.accentColor : Color(.secondaryLight)
                         )
                     
-                    Text(day.dayName).foregroundStyle(day.colored ? .white : .primary)
+					Text(day.dayName)
+						.foregroundStyle(.white)
                 }
                 
                 Spacer()

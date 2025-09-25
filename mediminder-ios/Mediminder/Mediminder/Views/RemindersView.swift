@@ -12,7 +12,7 @@ struct RemindersView: View {
 	@State private var medicine = ""
 	@State private var quantity = ""
 	@State private var measure = ""
-	@State private var showReminder = true
+	@State private var showReminder = false
 	@State private var isShowingReminderSheet = false
 
 	var body: some View {
@@ -85,6 +85,10 @@ struct RemindersView: View {
 						isShowingSheet = false
 					},
 					onNext: {
+					},
+					onCreate: {
+						isShowingSheet.toggle()
+						showReminder.toggle()
 					}
 				)
 			}
