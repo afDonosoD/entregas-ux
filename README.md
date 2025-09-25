@@ -19,7 +19,8 @@ La versión iOS está en la carpeta [mediminder-ios](./mediminder-ios/)
 
 ### iOS
 - German
-  - Pasos 1 y 2 de creación de medicina
+  - Paso 1 creación de medicina
+  - Paso 2 creación de medicina
   - Perfil
 - Andrés
   - Paso confirmación de creación de medicina
