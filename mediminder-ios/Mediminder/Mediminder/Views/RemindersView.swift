@@ -14,9 +14,33 @@ struct RemindersView: View {
 	@State private var measure = ""
 	@State private var showReminder = false
 	@State private var isShowingReminderSheet = false
+	@State private var showToast = false
 
 	var body: some View {
 		GeometryReader { proxy in
+			if showToast {
+				ZStack(alignment: .bottom) {
+					VStack {
+						Spacer()
+						
+						HStack {
+							Spacer()
+							
+							Text("¡Recordatorio creado con éxito!")
+								.padding(.all, 16)
+								.background(.successLight)
+								.foregroundColor(.successDark)
+								.cornerRadius(20)
+								.shadow(color: .successLight, radius: 12.5, x: 0, y: 4)
+								.padding(.bottom, 40)
+								.transition(.move(edge: .bottom).combined(with: .opacity))
+							
+							Spacer()
+						}
+					}
+				}
+			} //: Toast
+			
 			VStack {
 				HStack {
 					Spacer()
@@ -88,7 +112,17 @@ struct RemindersView: View {
 					},
 					onCreate: {
 						isShowingSheet.toggle()
-						showReminder.toggle()
+						
+						withAnimation {
+							showToast = true
+							showReminder = true
+						}
+						
+						DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+							withAnimation {
+								showToast = false
+							}
+						}
 					}
 				)
 			}
