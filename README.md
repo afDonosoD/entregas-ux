@@ -6,6 +6,18 @@ La versión web está en la carpeta [mediminder-web](./mediminder-web/)
 
 La versión iOS está en la carpeta [mediminder-ios](./mediminder-ios/)
 
+## Correr proyecto web
+Versiones recomendadas:
+- npm v10.9.0
+- node v23.0.0
+
+1. En la consola, ir a la raíz del proyecto ([mediminder-web](./mediminder-web/)).
+2. Instalar las dependencias con `npm install`
+3. Correr el proyecto con `npm run dev`
+
+Esto abrirá un servidor local y le dirá la ruta donde puede ver la app.
+
+
 ## Correr Proyecto iOS
 
 Para correr el proyecto de iOS es necesario instalar Xcode (se recomienda usar la última versión: **26.0.1**). También debe **instalar iOS 26.0** para el simulador, dado que esta es la versión usada en el proyecto. En caso de no tener instalada la versión 26, puede ver [esta sección](#instalar-simulador-ios-26)
