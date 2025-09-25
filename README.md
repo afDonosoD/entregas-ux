@@ -6,6 +6,15 @@ La versión web está en la carpeta [mediminder-web](./mediminder-web/)
 
 La versión iOS está en la carpeta [mediminder-ios](./mediminder-ios/)
 
+## Demos
+### Web
+https://github.com/user-attachments/assets/c428f96c-b7ef-4a80-9253-f8069fea6450
+
+### iOS
+https://github.com/user-attachments/assets/99d23215-0ac0-484e-9913-ff1cf6d85ca8
+
+
+
 ## Correr proyecto web
 Versiones recomendadas:
 - npm v10.9.0
@@ -16,11 +25,6 @@ Versiones recomendadas:
 3. Correr el proyecto con `npm run dev`
 
 Esto abrirá un servidor local y le dirá la ruta donde puede ver la app.
-
-### Demostración web
-
-https://github.com/user-attachments/assets/c428f96c-b7ef-4a80-9253-f8069fea6450
-
 
 ## Correr Proyecto iOS
 
