@@ -67,5 +67,3 @@ Haga click en `OS Version` y seleccione la opción `Download more simulator runt
 
 Finalmente le saldrá esta pantalla donde puede escoger el OS a descargar. Escoja iOS 26 y espere a que se instale.
 ![Descargar simuladores](./assets/select-simulator.png)
-
-### Demostración iOS
