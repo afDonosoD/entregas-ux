@@ -17,6 +17,10 @@ Versiones recomendadas:
 
 Esto abrirá un servidor local y le dirá la ruta donde puede ver la app.
 
+### Demostración web
+
+https://github.com/user-attachments/assets/c428f96c-b7ef-4a80-9253-f8069fea6450
+
 
 ## Correr Proyecto iOS
 
@@ -59,3 +63,5 @@ Haga click en `OS Version` y seleccione la opción `Download more simulator runt
 
 Finalmente le saldrá esta pantalla donde puede escoger el OS a descargar. Escoja iOS 26 y espere a que se instale.
 ![Descargar simuladores](./assets/select-simulator.png)
+
+### Demostración iOS
