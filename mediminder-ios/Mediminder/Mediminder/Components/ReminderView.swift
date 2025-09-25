@@ -44,7 +44,7 @@ struct ReminderView: View {
 			
 			Spacer()
 			
-			HStack {
+			HStack(spacing: 0) {
 				VStack(spacing: 3) {
 					Image(systemName: "clock.arrow.trianglehead.clockwise.rotate.90.path.dotted")
 						.font(.system(size: 16))
@@ -83,6 +83,8 @@ struct ReminderView: View {
 					
 					Text("Completar")
 						.font(.system(size: 12, design: .rounded))
+						.lineLimit(1)
+						.minimumScaleFactor(0.5)
 				}
 			} //: Actions HStack
 		} //: Card HStack
