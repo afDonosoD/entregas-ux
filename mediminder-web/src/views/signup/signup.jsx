@@ -18,7 +18,7 @@ function Signup() {
 
     setActiveUser({ email, password, name, lastName });
     showToast('¡Cuenta creada con éxito!', { type: 'success' });
-    navigate('/');
+    navigate('/login');
   }
 
   return (
